@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.modal{
+    background-color: rgba(0, 11, 160, 0.281);
+   
+
+    &_header{
+       height: 100px;
+       background-color: $btncolor;
+     
+    }
+
+     &_icon{
+            position:relative;
+        top:-20px;
+        z-index: 130;
+     }
+
+     &_row{
+        width: 100%;
+     }
+    
+
+       .btn-close{
+        color: $btn-text;
+        
+       }
+    
+}
+
+
+p{
+    text-align: right;
+}

@@ -1,0 +1,34 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import './components/all';
+@import './variables';
+
+body {
+ background-image: url(../img/def-bcgr.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App{
+  margin: 0;
+  padding: 0;
+
+  .row{
+  width: 100vw;
+}
+}
+
+.rightside{
+  flex-direction: column;
+}
+
+
+#img{
+  width:100%;
+  @media(max-width: 645px) {
+  width:45%;
+}
+}
+

@@ -1,0 +1,19 @@
+@import '../variables';
+
+.footer{
+    margin: 30px;
+    
+    .container{
+        justify-content: flex-end;
+    }
+
+    a{
+        background-color: $black;
+        border: none !important;
+    }
+
+    @media(max-width: 645px) {
+  margin:0;
+}
+
+}
