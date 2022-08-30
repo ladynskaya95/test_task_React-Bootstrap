@@ -1,3 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+https://twitter.com/
+https://web.whatsapp.com/
+https://www.facebook.com/
+https://www.instagram.com/

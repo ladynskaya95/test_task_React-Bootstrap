@@ -12,7 +12,6 @@ import {
 import AppContext from "../../AppContext";
 import Image from "react-bootstrap/Image";
 
-
 import s from "./ModalForm.module.scss";
 
 import icon from "../../img/let2.png"
@@ -26,9 +25,7 @@ function ModalForm()  {
   const handleClose = () => setShow(false);
 
   useEffect(() => {
-   
     const valueCount = value.replace(/\n/g, "").split(" ");
-   
     const avoidItems = ["the", "a", "an"];
     let res = valueCount.filter((val) => !avoidItems.includes(val)).toString();
     let resLength = res.length
@@ -38,13 +35,10 @@ function ModalForm()  {
 
   useEffect(() => {
     if (count < maxCount){
-  setValue(value.slice(0, maxCount));
+      setValue(value.slice(0, maxCount));
   }
   }, [maxCount])
   
- 
-
-
   return (
     <>
       <Modal className={s.modal} show={show} onHide={handleClose}>
@@ -82,7 +76,7 @@ function ModalForm()  {
               rows={7}
               value={value}
               onChange={(e) =>
-                setValue(e.target.value.replace(/[^А-яЁё A-Za-z]/g, ""))
+                setValue(e.target.value.replace(/[^А-яЁё A-Za-z \n]/g, ""))
               }
               maxLength={maxCount}
             />
