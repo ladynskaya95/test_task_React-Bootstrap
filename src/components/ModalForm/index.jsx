@@ -18,11 +18,12 @@ function ModalForm()  {
   const handleClose = () => setShow(false);
 
 useEffect(() => {
-  const valueCount = value.split(" ");
+  const valueCount = value.replace(/\n/g, "").split(" ");
   const avoidItems = ["the", "a", "an"];
   let res = valueCount.filter((val) => !avoidItems.includes(val))
   let resLength = res.toString().length
     setCount(resLength);
+    console.log(valueCount)
   
 }, [value])
 
