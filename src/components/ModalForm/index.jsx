@@ -26,13 +26,23 @@ function ModalForm()  {
   const handleClose = () => setShow(false);
 
   useEffect(() => {
-  const valueCount = value.replace(/\n/g, "").split(" ");
-  const avoidItems = ["the", "a", "an"];
-  let res = valueCount.filter((val) => !avoidItems.includes(val))
-  let resLength = res.toString().length
-    setCount(resLength);
-  
+   
+    const valueCount = value.replace(/\n/g, "").split(" ");
+   
+    const avoidItems = ["the", "a", "an"];
+    let res = valueCount.filter((val) => !avoidItems.includes(val)).toString();
+    let resLength = res.length
+      setCount(resLength)
+ 
   }, [value])
+
+  useEffect(() => {
+    if (count < maxCount){
+  setValue(value.slice(0, maxCount));
+  }
+  }, [maxCount])
+  
+ 
 
 
   return (
@@ -70,7 +80,10 @@ function ModalForm()  {
               label="Type your text"
               id="textAreaExample"
               rows={7}
-              onChange={(e) => setValue(e.target.value)}
+              value={value}
+              onChange={(e) =>
+                setValue(e.target.value.replace(/[^А-яЁё A-Za-z]/g, ""))
+              }
               maxLength={maxCount}
             />
           </Form>
