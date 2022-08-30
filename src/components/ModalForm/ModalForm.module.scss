@@ -3,29 +3,28 @@
 .modal{
     background-color: rgba(0, 11, 160, 0.281);
    
-
     &_header{
        height: 100px;
        background-color: $btncolor;
-     
     }
 
      &_icon{
-            position:relative;
-        top:-20px;
-        z-index: 130;
+         position:relative;
+         top:-20px;
+         z-index: 130;
+         width: fit-content;
+            @media(max-width: 645px) {
+               left: 150px;
+         }
      }
 
      &_row{
         width: 100%;
      }
     
-
-       .btn-close{
+      .btn-close{
         color: $btn-text;
-        
        }
-    
 }
 
 

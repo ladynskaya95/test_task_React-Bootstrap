@@ -4,16 +4,19 @@
 
   &-link{
     color: $black !important;
-   margin: 0 20px;
-}
-}
+    margin: 0 20px;
+
+    @media(max-width: 645px) {
+      margin:0;
+    }
+}}
 
 .header{
    margin: 40px 0;
 }
 
 .navbar{
-box-shadow: none !important;
+  box-shadow: none !important;
   font-size: 9.66pt;
   font-family: $default-font-family;
   font-weight: bold;
@@ -21,18 +24,15 @@ box-shadow: none !important;
   line-height: 0.9;
   letter-spacing: 0.5px;
 
-  
-@media(max-width: 645px) {
-   font-size: 8pt;
-  margin:0;
-  max-height: 100px;
+  @media(max-width: 645px) {
+    font-size: 8pt;
+    margin:0;
+    max-height: 100px;
 }
 }
-
 
 .btn{
    box-shadow: none !important;
     font-weight: bold;
   
-
 }

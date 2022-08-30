@@ -10,6 +10,7 @@ import Image from "react-bootstrap/Image";
 import img from "./img/bcgr.png";
 import Footer from "./components/Footer";
 import ModalForm from "./components/ModalForm";
+import logo from "./img/logo.png"
 
 import AppContext from "./AppContext";
 
@@ -22,6 +23,7 @@ function App() {
         <Row className="row justify-content-md-center">
           <Col xs={12} md={5} className="leftside">
             <Image id="img" src={img} fluid></Image>
+            <Image id="logo" src={logo} fluid></Image>
           </Col>
           <Col xs={12} md={7} className="rightside">
             <Header />

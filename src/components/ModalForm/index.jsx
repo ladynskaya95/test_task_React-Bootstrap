@@ -1,31 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { MDBRow, MDBCol , MDBBtn } from "mdb-react-ui-kit";
+import {
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBTextArea,
+  MDBInput,
+} from "mdb-react-ui-kit";
 import AppContext from "../../AppContext";
+import Image from "react-bootstrap/Image";
+
 
 import s from "./ModalForm.module.scss";
 
 import icon from "../../img/let2.png"
 
 function ModalForm()  {
-  const { show, setShow } = React.useContext(AppContext);
-  const [count, setCount] = React.useState(0)
-  const [value, setValue] =  React.useState("");
-  const [maxCount, setMaxCount] = React.useState(100);
+  const { show, setShow } = useContext(AppContext);
+  const [count, setCount] = useState(0)
+  const [value, setValue] =  useState("");
+  const [maxCount, setMaxCount] = useState(100);
 
   const handleClose = () => setShow(false);
 
-useEffect(() => {
+  useEffect(() => {
   const valueCount = value.replace(/\n/g, "").split(" ");
   const avoidItems = ["the", "a", "an"];
   let res = valueCount.filter((val) => !avoidItems.includes(val))
   let resLength = res.toString().length
     setCount(resLength);
-    console.log(valueCount)
   
-}, [value])
+  }, [value])
 
 
   return (
@@ -36,7 +43,7 @@ useEffect(() => {
             <MDBCol md="4"></MDBCol>
             <MDBCol md="4">
               <Modal.Title className={s.modal_icon}>
-                <img src={icon} width="150px" alt="logo" />
+                <Image src={icon} fluid width="150px" alt="logo"></Image>
               </Modal.Title>
             </MDBCol>
             <MDBCol md="4"></MDBCol>
@@ -49,29 +56,27 @@ useEffect(() => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Max words count</Form.Label>
-              <Form.Control
-              type="number"
-                as="input"
-                value={maxCount}
-                oonChange={(e) => setMaxCount(e.target.value)}
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
+            <MDBInput
               className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Type your text</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={7}
-                onChange={(e) => setValue(e.target.value)}
-              />
-            </Form.Group>
+              label="Max words count"
+              id="form1"
+              type="text"
+              value={maxCount}
+              onChange={(e) => setMaxCount(e.target.value)}
+              autoFocus
+            />
+            <MDBTextArea
+              className="mb-3"
+              label="Type your text"
+              id="textAreaExample"
+              rows={7}
+              onChange={(e) => setValue(e.target.value)}
+              maxLength={maxCount}
+            />
           </Form>
-          <p>{count}/{maxCount}</p>
+          <p>
+            {count}/{maxCount}
+          </p>
         </Modal.Body>
       </Modal>
     </>

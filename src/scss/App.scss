@@ -1,10 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
-
 @import './components/all';
 @import './variables';
 
 body {
- background-image: url(../img/def-bcgr.png);
+  background-image: url(../img/def-bcgr.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -27,8 +26,22 @@ body {
 
 #img{
   width:100%;
-  @media(max-width: 645px) {
-  width:45%;
+  z-index: 90;
+
+    @media(max-width: 645px) {
+      width:55%;
+}
+}
+
+#logo{
+  position: absolute;
+  z-index: 100;
+  left: 40px;
+  top: 40px;
+  width: 150px;
+
+   @media(max-width: 645px) {
+    width:70px;
 }
 }
 
