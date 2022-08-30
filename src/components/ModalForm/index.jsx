@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -12,8 +12,20 @@ import icon from "../../img/let2.png"
 function ModalForm()  {
   const { show, setShow } = React.useContext(AppContext);
   const [count, setCount] = React.useState(0)
+  const [value, setValue] =  React.useState("");
+  const [maxCount, setMaxCount] = React.useState(100);
 
   const handleClose = () => setShow(false);
+
+useEffect(() => {
+  const valueCount = value.split(" ");
+  const avoidItems = ["the", "a", "an"];
+  let res = valueCount.filter((val) => !avoidItems.includes(val))
+  let resLength = res.toString().length
+    setCount(resLength);
+  
+}, [value])
+
 
   return (
     <>
@@ -38,7 +50,13 @@ function ModalForm()  {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Max words count</Form.Label>
-              <Form.Control type="text" value="100" autoFocus />
+              <Form.Control
+              type="number"
+                as="input"
+                value={maxCount}
+                oonChange={(e) => setMaxCount(e.target.value)}
+                autoFocus
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
@@ -48,11 +66,11 @@ function ModalForm()  {
               <Form.Control
                 as="textarea"
                 rows={7}
-                onChange={(e) => setCount(e.target.value.length)}
+                onChange={(e) => setValue(e.target.value)}
               />
             </Form.Group>
           </Form>
-          <p>{count}/100</p>
+          <p>{count}/{maxCount}</p>
         </Modal.Body>
       </Modal>
     </>
