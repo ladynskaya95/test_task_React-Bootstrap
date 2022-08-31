@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Header from "./components/Header";
 import Content from "./components/Content";
@@ -12,13 +12,9 @@ import Footer from "./components/Footer";
 import ModalForm from "./components/ModalForm";
 import logo from "./img/logo.png"
 
-import AppContext from "./AppContext";
-
 function App() {
-  const [show, setShow] = useState(false);
 
-  return (
-    <AppContext.Provider value={{ show, setShow }}>
+    return (
       <Container className="App container ">
         <Row className="row justify-content-md-center">
           <Col xs={12} md={5} className="leftside">
@@ -26,15 +22,16 @@ function App() {
             <Image id="logo" src={logo} fluid></Image>
           </Col>
           <Col xs={12} md={7} className="rightside">
-            <Header />
-            <ModalForm />
+            <div className="d-flex ev">
+              <Header />
+              <ModalForm />
+            </div>
             <Content />
             <Footer />
           </Col>
         </Row>
       </Container>
-    </AppContext.Provider>
-  );
+    );
 }
 
 export default App;
