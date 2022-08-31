@@ -11,10 +11,14 @@
      &_icon{
          position:relative;
          top:-20px;
+         left: 100px;
          z-index: 130;
          width: fit-content;
             @media(max-width: 645px) {
                left: 150px;
+         }
+          @media(max-width: 450px) {
+               left: 90px;
          }
      }
 

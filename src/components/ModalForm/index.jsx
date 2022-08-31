@@ -83,13 +83,13 @@ class ModalForm extends React.Component {
           onHide={this.handleClose}>
           <Modal.Header className={s.modal_header}>
             <MDBRow className={s.modal_row}>
-              <MDBCol md="4"></MDBCol>
-              <MDBCol md="4">
+              <MDBCol md="3"></MDBCol>
+              <MDBCol md="6">
                 <Modal.Title className={s.modal_icon}>
                   <Image src={icon} fluid width="150px" alt="logo"></Image>
                 </Modal.Title>
               </MDBCol>
-              <MDBCol md="4"></MDBCol>
+              <MDBCol md="3"></MDBCol>
             </MDBRow>
             <MDBBtn
               className="btn-close btn-close-white"

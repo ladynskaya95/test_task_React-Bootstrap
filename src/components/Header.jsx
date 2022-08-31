@@ -4,8 +4,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-
-
+const items = [
+  { name: "Home", key: 1 },
+  { name: "Transport", key: 2 },
+  { name: "Bus Stop", key: 3 },
+  { name: "Route", key: 4 },
+  { name: "About us", key: 4 },
+];
 
 function Header () {
  
@@ -14,26 +19,14 @@ function Header () {
         <Container fluid className="header">
           <Navbar.Collapse
             className="justify-content-around"
-            id="responsive-navbar-nav"
-          >
+            id="responsive-navbar-nav">
             <Nav className="justify-align-content-lg-between" activeKey="/home">
-              <Nav.Item eventKey={1}>
-                <Nav.Link>Home</Nav.Link>
-              </Nav.Item>
-              <Nav.Item eventKey={2}>
-                <Nav.Link>Transport</Nav.Link>
-              </Nav.Item>
-              <Nav.Item eventKey={3}>
-                <Nav.Link>Bus Stop</Nav.Link>
-              </Nav.Item>
-              <Nav.Item eventKey={4}>
-                <Nav.Link>Route</Nav.Link>
-              </Nav.Item>
-              <Nav.Item eventKey={5}>
-                <Nav.Link>About us</Nav.Link>
-              </Nav.Item>
+              {items.map((item) => (
+                <Nav.Item eventKey={item.key}>
+                  <Nav.Link>{item.name}</Nav.Link>
+                </Nav.Item>
+              ))}
             </Nav>
-           
           </Navbar.Collapse>
         </Container>
       </Navbar>

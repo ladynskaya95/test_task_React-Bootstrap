@@ -1,19 +1,20 @@
 import React from "react";
-
-import Header from "./components/Header";
-import Content from "./components/Content";
-import "./scss/App.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import img from "./img/bcgr.png";
+
+import Header from "./components/Header";
+import Content from "./components/Content";
 import Footer from "./components/Footer";
 import ModalForm from "./components/ModalForm";
-import logo from "./img/logo.png"
+
+import "./scss/App.scss";
+
+import img from "./img/bcgr.png";
+import logo from "./img/logo.png";
 
 function App() {
-
     return (
       <Container className="App container ">
         <Row className="row justify-content-md-center">
