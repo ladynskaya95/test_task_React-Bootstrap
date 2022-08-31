@@ -1,0 +1,44 @@
+ /* @import url(../src/scss/components/_all.scss); */
+
+ :root{
+    --black: #060608;
+    --white: #FFFFFF;
+}
+
+ body{
+  background-image: none !important;
+   height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+img, svg {
+  display: none !important;
+}
+
+ footer, nav, form, .leftside {
+  display: none !important;
+}
+
+.fas{
+  display: none !important;
+}
+
+a::after {
+   color: var(--black);
+   background-color: var(--white);
+   border: none;
+  content: " (" attr(href) ")";
+}
+.content .btn {
+    margin: 40px 0;
+    width: 226px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: none !important;
+    background-color: white !important;
+    border:none;
+    color: var(--black) !important;
+}

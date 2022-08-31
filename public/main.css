@@ -1,0 +1,15 @@
+/* @import url(../src/scss/components/_all.scss); */
+/* @import url(./print.css); */
+
+
+
+@media print {
+
+  .content {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+}

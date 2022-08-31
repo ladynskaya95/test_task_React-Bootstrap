@@ -9,7 +9,7 @@ const items = [
   { name: "Transport", key: 2 },
   { name: "Bus Stop", key: 3 },
   { name: "Route", key: 4 },
-  { name: "About us", key: 4 },
+  { name: "About us", key: 5 },
 ];
 
 function Header () {

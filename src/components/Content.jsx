@@ -10,7 +10,7 @@ const Content = () => {
       </header>
       <main>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias exercitationem atque laboriosam eius commodi minima.</p>
-        <Button className="btn">Read more</Button>
+        <Button className="btn" href="http://google.com/">Read more</Button>
       </main>
       
     </Container>
