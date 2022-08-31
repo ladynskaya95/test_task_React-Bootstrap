@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {
   MDBFooter,
@@ -19,6 +19,11 @@ const links = [
 ];
 
 const Footer = () => {
+  useEffect(() => {
+    document.head.innerHTML += `
+  <meta name="robots" content="noindex">
+  `;}, []);
+
   return (
     <MDBFooter className="footer">
       <MDBContainer className="p-4 d-flex">

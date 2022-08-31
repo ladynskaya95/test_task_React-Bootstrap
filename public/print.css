@@ -30,7 +30,7 @@ a::after {
    color: var(--black);
    background-color: var(--white);
    border: none;
-  content: " (" attr(href) ")";
+   content: " (" attr(href) ")";
 }
 .content .btn {
     margin: 40px 0;
